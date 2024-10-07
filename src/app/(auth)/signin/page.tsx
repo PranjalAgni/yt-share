@@ -38,6 +38,8 @@ export default function SignInPage() {
     setMessage({ type: "", content: "" });
 
     try {
+      // TODO: need to get URL's from the config
+      // load from the env and import from the config
       const response = await fetch("http://localhost:8000/login", {
         method: "POST",
         headers: {
@@ -60,7 +62,7 @@ export default function SignInPage() {
       });
 
       // Redirect to dashboard or home page after successful login
-      setTimeout(() => router.push("/dashboard"), 2000);
+      setTimeout(() => router.push("/dashboard"), 1500);
     } catch (error) {
       console.error("Login error:", error);
       setMessage({
